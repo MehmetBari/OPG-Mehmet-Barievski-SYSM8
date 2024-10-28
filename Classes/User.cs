@@ -18,7 +18,8 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
 
         //Konstruktor
 
-        public User(string Country, string SecurityQuestion, string SecurityAnswer)
+        public User(string Country, string SecurityQuestion, string SecurityAnswer, string username,string password) : base (username,password)
+
         {
             this.Country = Country;
             this.SecurityQuestion = SecurityQuestion;

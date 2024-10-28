@@ -7,6 +7,10 @@
         mc:Ignorable="d"
         Title="FitTrack Login" Height="350" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Label Content="FitTrack" FontSize="24" FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/> 
+        <Label Content="FitTrack" FontSize="24" FontFamily="Arial" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            
+            
+        </StackPanel>
     </Grid>
 </Window>
