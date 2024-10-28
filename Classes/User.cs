@@ -31,6 +31,8 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
         }
         public void ResetPassword(string SecurityAnswer)
         
-        { throw new NotImplementedException(); }
+        {
+            throw new NotImplementedException();
+        }
     }
 }
