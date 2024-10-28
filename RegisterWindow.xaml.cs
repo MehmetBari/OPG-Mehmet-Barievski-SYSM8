@@ -22,6 +22,29 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG
         public RegisterWindow()
         {
             InitializeComponent();
+
+            //Kan lägga till fler länder om man vill
+            CountryComboBox.ItemsSource = new List<string> { "Sweden", "Norway", "Denmark" };
+
+        }
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            string username = UsernameTextBox.Text;
+            string password = PasswordTextBox.Password;
+            string country = CountryComboBox.SelectedItem as string;
+
+            // Kolla om användarnamnet är upptaget (lägg till validering)
+            if (username == "existerandeAnvändarnamn")
+            {
+                WarningText.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                // Spara användaren och gå tillbaka till MainWindow
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+                this.Close();
+            }
         }
     }
 }
