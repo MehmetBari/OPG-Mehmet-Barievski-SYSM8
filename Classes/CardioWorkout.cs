@@ -13,7 +13,7 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
 
         //Konstruktor
 
-        public CardioWorkout(int Distance)
+        public CardioWorkout(int Distance, DateTime Date, string Type, string Notes, TimeSpan Duration, int CaloriesBurned) : base (Date, Type, Notes, Duration, CaloriesBurned)
         {
             this.Distance = Distance;
         }
