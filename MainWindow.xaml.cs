@@ -20,7 +20,29 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG
         {
             InitializeComponent();
         }
+        private void SignInButton_Click(object sender, RoutedEventArgs e)
+        {
+            string username = UsernameTextBox.Text;
+            string password = PasswordTextBox.Password;
 
+            // Kontrollera om användarnamn och lösenord är korrekta
+            if (username == "admin" && password == "password")
+            {
+                MessageBox.Show("Login successful!");
+                this.Close(); // Stänger MainWindow efter inloggning
+            }
+            else
+            {
+                WarningText.Visibility = Visibility.Visible; // Visar varningsmeddelandet
+            }
+        }
+
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            RegisterWindow registerWindow = new RegisterWindow();
+            registerWindow.Show();
+            this.Close(); // Stänger MainWindow och öppnar RegisterWindow
+        }
 
     }
 }
