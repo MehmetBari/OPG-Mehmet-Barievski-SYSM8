@@ -13,7 +13,7 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
 
         //Konstruktor
 
-        public StrengthWorkout(int repetitions)
+        public StrengthWorkout(int repetitions, DateTime Date, string Type, string Notes, TimeSpan Duration, int CaloriesBurned) : base (Date, Type, Notes, Duration, CaloriesBurned)
         {
             this.Repetitions = repetitions;
         }
