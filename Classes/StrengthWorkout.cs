@@ -6,21 +6,22 @@ using System.Threading.Tasks;
 
 namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
 {
-    public class CardioWorkout : Workout 
+    public class StrengthWorkout : Workout
     {
-        //Egenskaper
-        public int Distance { get; set; }
+        //Egenskaper 
+        public int Repetitions { get; set; }
 
         //Konstruktor
 
-        public CardioWorkout(int Distance)
+        public StrengthWorkout(int repetitions)
         {
-            this.Distance = Distance;
+            this.Repetitions = repetitions;
         }
         //Metod 
         public override int CalculateCaloriesBurned()
         {
             throw new NotImplementedException();
         }
+
     }
 }
