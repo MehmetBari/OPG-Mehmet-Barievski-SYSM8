@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
 {
-    public class AdminUser
+    public class AdminUser : User
     {
-        //Metod 
+    public AdminUser(string Country, string SecurityQuestion, string SecurityAnswer, string username, string password) : base(Country, SecurityQuestion, SecurityAnswer, username, password)
+        {
 
-        public void ManageAllWorkouts();
+        }
+        public void ManageAllWorkouts()
+        {
+
+        }
     }
+
+   
 }
+
