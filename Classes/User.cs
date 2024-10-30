@@ -14,7 +14,7 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
 
         //Egenskaper
 
-        public string Country { get; set; }
+        public string country { get; set; }
 
         
 
@@ -22,10 +22,10 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
 
         //Konstruktor
 
-        public User(string Country, string username,string password) : base (username,password)
+        public User(string country, string username,string password) : base (username,password)
 
         {
-            this.Country = Country;
+            this.country = country;
            
         }
         // Metod override från Person
@@ -45,10 +45,34 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
             }
             return false;
         }
-        public void ResetPassword(string SecurityAnswer)
+        public void ResetPassword()
         
         {
-            throw new NotImplementedException();
+            
+        }
+        public static void RegisterUser(string country,string username, string password)
+        {
+            bool userExist = false;
+
+            foreach(var users in userlist)
+            {
+                if(username == users.Username)
+                {
+                    userExist = true;
+                }
+            }
+
+            if (!userExist)
+            {
+                User user = new User(country, username, password);
+                userlist.Add(user);
+            }
+            else
+            {
+                MessageBox.Show($"{username} already exist");
+            }
+
+            
         }
     }
 }

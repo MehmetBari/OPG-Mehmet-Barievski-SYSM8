@@ -7,14 +7,14 @@
         mc:Ignorable="d"
          Title="Workouts" Height="400" Width="600" WindowStartupLocation="CenterScreen">
     <Grid>
-        <StackPanel>
-            <Label Content="Welcome, [username]" FontSize="18" x:Name="UsernameLabel"/>
-            <Button Content="Add Workout" Width="100" Margin="0,10" Click="AddWorkoutButton_Click"/>
-            <Button Content="Details" Width="100" Click="DetailsButton_Click"/>
-            <Button Content="Remove" Width="100" Click="RemoveButton_Click"/>
+        <StackPanel Background="LightGray">
+            <Label Content="Welcome, [username]" Foreground="Crimson" FontSize="18" x:Name="UsernameLabel"/>
+            <Button Content="Add Workout" Foreground="Crimson" Width="100" Margin="0,10" Click="AddWorkoutButton_Click"/>
+            <Button Content="Details" Foreground="Crimson" Width="100" Click="DetailsButton_Click"/>
+            <Button Content="Remove" Foreground="Crimson" Width="100" Click="RemoveButton_Click"/>
             <ListBox x:Name="WorkoutsListBox" />
-            <Button Content="User" Width="100" Click="UserButton_Click"/>
-            <Button Content="Sign Out" Width="100" Click="SignOutButton_Click"/>
+            <Button Content="User" Foreground="Crimson" Width="100" Click="UserButton_Click"/>
+            <Button Content="Sign Out" Foreground="Crimson" Width="100" Click="SignOutButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>

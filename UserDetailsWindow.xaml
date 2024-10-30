@@ -6,21 +6,21 @@
         xmlns:local="clr-namespace:FITTRACK_PROJEKTUPPGIFT_OPG"
         mc:Ignorable="d"
         Title="User Details" Height="400" Width="400">
-    <Grid>
-        <StackPanel Margin="10">
-            <TextBlock Text="Nuvarande Användarnamn:"/>
+    <Grid Background="LightGray">
+        <StackPanel Background="LightGray" Margin="10">
+            <TextBlock Text="Nuvarande Användarnamn:" Foreground="Crimson"/>
             <TextBox x:Name="CurrentUsername" IsReadOnly="True" Margin="0,10,0,10"/>
 
-            <TextBlock Text="Nytt Användarnamn:"/>
+            <TextBlock Text="Nytt Användarnamn:" Foreground="Crimson"/>
             <TextBox x:Name="NewUsername" Margin="0,10,0,10"/>
 
-            <TextBlock Text="Nytt Lösenord:"/>
+            <TextBlock Text="Nytt Lösenord:" Foreground="Crimson"/>
             <PasswordBox x:Name="NewPassword" Margin="0,10,0,10"/>
 
-            <TextBlock Text="Bekräfta Lösenord:"/>
+            <TextBlock Text="Bekräfta Lösenord:" Foreground="Crimson"/>
             <PasswordBox x:Name="ConfirmPassword" Margin="0,10,0,10"/>
 
-            <TextBlock Text="Välj Land:"/>
+            <TextBlock Text="Välj Land:" Foreground="Crimson"/>
             <ComboBox x:Name="CountryComboBox" Margin="0,10,0,10">
                 <ComboBoxItem Content="Sverige"/>
                 <ComboBoxItem Content="Norge"/>
@@ -28,9 +28,9 @@
                 <ComboBoxItem Content="Finland"/>
             </ComboBox>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
-                <Button Content="Save" Click="SaveButton_Click" Margin="0,0,10,0"/>
-                <Button Content="Cancel" Click="CancelButton_Click"/>
+            <StackPanel Background="LightGray" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                <Button Content="Save" Click="SaveButton_Click" Foreground="Crimson" Margin="0,0,10,0"/>
+                <Button Content="Cancel" Click="CancelButton_Click" Foreground="Crimson"/>
             </StackPanel>
         </StackPanel>
     </Grid>

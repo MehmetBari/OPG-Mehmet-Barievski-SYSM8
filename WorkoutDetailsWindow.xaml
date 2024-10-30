@@ -7,31 +7,31 @@
         mc:Ignorable="d"
         Title="Workout Details" Height="400" Width="400">
     <Grid>
-        <StackPanel>
+        <StackPanel Background="LightGray">
             <!-- Datum för träningspass -->
-            <Label Content="Date:" />
+            <Label Content="Date:" Foreground="Crimson" />
             <TextBox Name="DateTextBox" IsReadOnly="True" />
 
             <!-- Typ av träning -->
-            <Label Content="Workout Type:" />
+            <Label Content="Workout Type:" Foreground="Crimson" />
             <TextBox Name="TypeTextBox" IsReadOnly="True" />
 
             <!-- Varaktighet -->
-            <Label Content="Duration (minutes):" />
+            <Label Content="Duration (minutes):" Foreground="Crimson" />
             <TextBox Name="DurationTextBox" IsReadOnly="True" />
 
             <!-- Kalorier brända -->
-            <Label Content="Calories Burned:" />
+            <Label Content="Calories Burned:" Foreground="Crimson" />
             <TextBox Name="CaloriesTextBox" IsReadOnly="True" />
 
             <!-- Anteckningar -->
-            <Label Content="Notes:" />
+            <Label Content="Notes:" Foreground="Crimson" />
             <TextBox Name="NotesTextBox" IsReadOnly="True" AcceptsReturn="True" Height="100" />
 
             <!-- Kontrollknappar -->
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
-                <Button Name="EditButton" Content="Edit" Click="EditButton_Click" Width="80" Margin="5" />
-                <Button Name="SaveButton" Content="Save" Click="SaveButton_Click" Width="80" Margin="5" IsEnabled="False" />
+                <Button Name="EditButton" Content="Edit" Foreground="Crimson" Click="EditButton_Click" Width="80" Margin="5" />
+                <Button Name="SaveButton" Content="Save" Foreground="Crimson" Click="SaveButton_Click" Width="80" Margin="5" IsEnabled="False" />
             </StackPanel>
         </StackPanel>
     </Grid>

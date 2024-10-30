@@ -8,7 +8,7 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
 {
     public class AdminUser : User
     {
-    public AdminUser(string Country, string SecurityQuestion, string SecurityAnswer, string username, string password) : base(Country, SecurityQuestion, SecurityAnswer, username, password)
+    public AdminUser(string Country, string username, string password) : base(Country, username, password)
         {
 
         }
