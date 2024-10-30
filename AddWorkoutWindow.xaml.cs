@@ -23,5 +23,24 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG
         {
             InitializeComponent();
         }
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(DateInput.Text) ||
+                string.IsNullOrWhiteSpace(TypeInput.Text) ||
+                string.IsNullOrWhiteSpace(DurationInput.Text) ||
+                string.IsNullOrWhiteSpace(CaloriesInput.Text) ||
+                string.IsNullOrWhiteSpace(NotesInput.Text))
+            {
+                MessageBox.Show("Alla fält måste fyllas i.", "Varning", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            else
+            {
+                // Här sparas träningspasset.
+                MessageBox.Show("Träningspass sparat!");
+                Close();
+            }
+        }
     }
 }
+    
+
