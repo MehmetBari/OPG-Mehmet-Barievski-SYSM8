@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FITTRACK_PROJEKTUPPGIFT_OPG"
         mc:Ignorable="d"
-        Title="WorkoutDetailsWindow" Height="450" Width="800">
+        Title="Workout Details" Height="400" Width="400">
     <Grid>
-        
+        <StackPanel>
+            <!-- Datum för träningspass -->
+            <Label Content="Date:" />
+            <TextBox Name="DateTextBox" IsReadOnly="True" />
+
+            <!-- Typ av träning -->
+            <Label Content="Workout Type:" />
+            <TextBox Name="TypeTextBox" IsReadOnly="True" />
+
+            <!-- Varaktighet -->
+            <Label Content="Duration (minutes):" />
+            <TextBox Name="DurationTextBox" IsReadOnly="True" />
+
+            <!-- Kalorier brända -->
+            <Label Content="Calories Burned:" />
+            <TextBox Name="CaloriesTextBox" IsReadOnly="True" />
+
+            <!-- Anteckningar -->
+            <Label Content="Notes:" />
+            <TextBox Name="NotesTextBox" IsReadOnly="True" AcceptsReturn="True" Height="100" />
+
+            <!-- Kontrollknappar -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                <Button Name="EditButton" Content="Edit" Click="EditButton_Click" Width="80" Margin="5" />
+                <Button Name="SaveButton" Content="Save" Click="SaveButton_Click" Width="80" Margin="5" IsEnabled="False" />
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>
