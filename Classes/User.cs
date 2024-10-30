@@ -3,32 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
 {
     public class User : Person 
     {
+       
+        public static List<User> userlist = new List<User>();
+
         //Egenskaper
 
         public string Country { get; set; }
 
-        public string SecurityQuestion { get; set; }
+        
 
-        public string SecurityAnswer { get; set; }
+        
 
         //Konstruktor
 
-        public User(string Country, string SecurityQuestion, string SecurityAnswer, string username,string password) : base (username,password)
+        public User(string Country, string username,string password) : base (username,password)
 
         {
             this.Country = Country;
-            this.SecurityQuestion = SecurityQuestion;
-            this.SecurityAnswer = SecurityAnswer;
+           
         }
         // Metod override från Person
-        public override void SignIn()
+        public override bool SignIn(string username, string password)
         {
-            throw new NotImplementedException();
+            foreach (var user in userlist)
+            {
+                if (username == user.Username && password == user.Password)
+                {
+                    MessageBox.Show("Login successful!");
+                    return true;
+
+                }
+                
+
+
+            }
+            return false;
         }
         public void ResetPassword(string SecurityAnswer)
         

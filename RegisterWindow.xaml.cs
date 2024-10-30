@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FITTRACK_PROJEKTUPPGIFT_OPG.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,17 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG
             string username = UsernameTextBox.Text;
             string password = PasswordTextBox.Password;
             string country = CountryComboBox.SelectedItem as string;
+            if (string.IsNullOrEmpty(country) && string.IsNullOrEmpty(password) && string.IsNullOrEmpty(username))
+            {
+                foreach (var user in User.userlist)
+                {
+                    if (user.Username != username)
+                    {
+                       
+                        return;
+                    }
+                }   
+            }
 
             // Kolla om användarnamnet är upptaget (lägg till validering)
             if (username == "existerandeAnvändarnamn")

@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using FITTRACK_PROJEKTUPPGIFT_OPG.Classes;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,6 +20,8 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG
         public MainWindow()
         {
             InitializeComponent();
+            User user = new User("User", "User", "1");
+            User.userlist.Add(user);
         }
         private void SignInButton_Click(object sender, RoutedEventArgs e)
         {
@@ -26,15 +29,14 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG
             string password = PasswordTextBox.Password;
 
             // Kontrollera om användarnamn och lösenord är korrekta
-            if (username == "admin" && password == "password")
+            User user = new User("Sweden",username,password);
+            bool LoggedIn = user.SignIn(username,password);
+            if (LoggedIn)
             {
-                MessageBox.Show("Login successful!");
-                this.Close(); // Stänger MainWindow efter inloggning
+                WorkoutsWindow workoutsWindow = new WorkoutsWindow(username);
+                workoutsWindow.Show();
             }
-            else
-            {
-                WarningText.Visibility = Visibility.Visible; // Visar varningsmeddelandet
-            }
+            else MessageBox.Show("Invalid Login");
         }
 
         private void RegisterButton_Click(object sender, RoutedEventArgs e)

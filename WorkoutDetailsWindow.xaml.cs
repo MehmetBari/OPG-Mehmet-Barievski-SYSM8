@@ -69,7 +69,7 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG
             SaveWorkoutDetails();
 
             // Stäng detta fönster och öppna WorkoutsWindow
-            var workoutsWindow = new WorkoutsWindow();
+            var workoutsWindow = new WorkoutsWindow("User");
             workoutsWindow.Show();
             this.Close();
         }

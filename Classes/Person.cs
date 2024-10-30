@@ -22,7 +22,7 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
         }
 
         //Metod
-        public abstract void SignIn();
+        public abstract bool SignIn(string username,string password);
 
     }
 }
