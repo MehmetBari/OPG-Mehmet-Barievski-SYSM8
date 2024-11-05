@@ -8,19 +8,19 @@
         Title="User Details" Height="400" Width="400">
     <Grid Background="LightGray">
         <StackPanel Background="LightGray" Margin="10">
-            <TextBlock Text="Nuvarande Användarnamn:" Foreground="Crimson"/>
+            <TextBlock Text="Current Username:" Foreground="Crimson"/>
             <TextBox x:Name="CurrentUsername" IsReadOnly="True" Margin="0,10,0,10"/>
 
-            <TextBlock Text="Nytt Användarnamn:" Foreground="Crimson"/>
+            <TextBlock Text="New Username:" Foreground="Crimson"/>
             <TextBox x:Name="NewUsername" Margin="0,10,0,10"/>
 
-            <TextBlock Text="Nytt Lösenord:" Foreground="Crimson"/>
+            <TextBlock Text="New Password:" Foreground="Crimson"/>
             <PasswordBox x:Name="NewPassword" Margin="0,10,0,10"/>
 
-            <TextBlock Text="Bekräfta Lösenord:" Foreground="Crimson"/>
+            <TextBlock Text="Confrim Password:" Foreground="Crimson"/>
             <PasswordBox x:Name="ConfirmPassword" Margin="0,10,0,10"/>
 
-            <TextBlock Text="Välj Land:" Foreground="Crimson"/>
+            <TextBlock Text="Choose Country:" Foreground="Crimson"/>
             <ComboBox x:Name="CountryComboBox" Margin="0,10,0,10">
                 <ComboBoxItem Content="Sverige"/>
                 <ComboBoxItem Content="Norge"/>
