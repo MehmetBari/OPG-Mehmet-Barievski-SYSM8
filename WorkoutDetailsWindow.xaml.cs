@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FITTRACK_PROJEKTUPPGIFT_OPG.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,25 +15,25 @@ using System.Windows.Shapes;
 
 namespace FITTRACK_PROJEKTUPPGIFT_OPG
 {
-    /// <summary>
-    /// Interaction logic for WorkoutDetailsWindow.xaml
-    /// </summary>
+  
     public partial class WorkoutDetailsWindow : Window
     {
         private bool isEditing = false;
-        public WorkoutDetailsWindow()
+        private Workout Workout;
+        public WorkoutDetailsWindow(Workout Workout)
         {
+            this.Workout = Workout;
             InitializeComponent();
             LoadWorkoutDetails(); 
         }
         private void LoadWorkoutDetails()
         {
             // Här laddar du träningsdetaljerna
-            DateTextBox.Text = "2023-10-01"; // exempelvärden
-            TypeTextBox.Text = "Running";
-            DurationTextBox.Text = "45";
-            CaloriesTextBox.Text = "350";
-            NotesTextBox.Text = "Sunny day, felt great!";
+            DateTextBox.Text = Workout.Date.ToString("MM/dd/yyyy");
+            TypeTextBox.Text = Workout.Type;
+            DurationTextBox.Text = Workout.Duration.ToString();
+            CaloriesTextBox.Text = Workout.CaloriesBurned.ToString();
+            NotesTextBox.Text = Workout.Notes;
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
@@ -69,7 +70,7 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG
             SaveWorkoutDetails();
 
             // Stäng detta fönster och öppna WorkoutsWindow
-            var workoutsWindow = new WorkoutsWindow("User");
+            var workoutsWindow = new WorkoutsWindow(User.currentUser);
             workoutsWindow.Show();
             this.Close();
         }

@@ -15,9 +15,7 @@ using System.Windows.Shapes;
 
 namespace FITTRACK_PROJEKTUPPGIFT_OPG
 {
-    /// <summary>
-    /// Interaction logic for RegisterWindow.xaml
-    /// </summary>
+  
     public partial class RegisterWindow : Window
     {
         public RegisterWindow()
@@ -25,7 +23,7 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG
             InitializeComponent();
 
             //Kan lägga till fler länder om man vill
-            CountryComboBox.ItemsSource = new List<string> { "Sweden", "Norway", "Denmark" };
+            CountryComboBox.ItemsSource = new List<string> { "Sweden", "Norway", "Denmark", "Finland" };
 
         }
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
@@ -47,20 +45,24 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG
                 }   
             }
 
+            // Kolla om användarnamnet är upptaget 
             User.RegisterUser(country, username, password); 
 
-            // Kolla om användarnamnet är upptaget (lägg till validering)
-            if (username == "existerandeAnvändarnamn")
-            {
-                WarningText.Visibility = Visibility.Visible;
-            }
-            else
-            {
+            
+           
                 // Spara användaren och gå tillbaka till MainWindow
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();
-            }
+            
+        }
+
+        private void LogIn_Click(object sender, RoutedEventArgs e)
+        {
+            // Öppnar MainWindow och stänger Register Window
+            MainWindow mainWindow = new MainWindow();
+            mainWindow.Show();
+            this.Close();
         }
     }
 }

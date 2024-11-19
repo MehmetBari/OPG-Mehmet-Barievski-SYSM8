@@ -10,11 +10,26 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
     {
     public AdminUser(string Country, string username, string password) : base(Country, username, password)
         {
-
+            isAdmin = true;
         }
+
         public void ManageAllWorkouts()
         {
 
+        }
+
+        public static List<Workout> GetAllWorkouts()
+        {
+            List<Workout> Allworkouts = new List<Workout>();
+            
+            foreach(var user in User.userlist)
+            {
+                foreach (var workout in user.Workouts)
+                {
+                    Allworkouts.Add(workout);
+                }
+            }
+            return Allworkouts;
         }
     }
 

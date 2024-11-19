@@ -8,12 +8,21 @@
         Title="Add Workout" Height="300" Width="400">
     <Grid Background="LightGray">
         <StackPanel Background="LightGray" Margin="10">
-            
+
             <TextBlock Text="Date" Foreground="Crimson"/>
-            <TextBox x:Name="DateInput"  Margin="0,10,0,10"/>
+            <DatePicker x:Name="DateInput" Margin="0,10,0,10"/>
 
             <TextBlock Text="Workout Type" Foreground="Crimson"/>
-            <TextBox x:Name="TypeInput"  Margin="0,10,0,10"/>
+            <ComboBox x:Name="TypeWorkout" SelectionChanged="TypeWorkout_SelectionChanged">
+                <ComboBoxItem Content="Strength" />
+                <ComboBoxItem Content="Cardio" />
+            </ComboBox>
+
+            <TextBlock x:Name="RepetitionsLabel" Text="Repetitions" Foreground="Crimson" Visibility="Collapsed"/>
+            <TextBox x:Name="RepetitionsInput" Visibility="Collapsed"  />
+
+            <TextBlock  x:Name="DistanceLabel" Text="Distance" Foreground="Crimson" Visibility="Collapsed"/>
+            <TextBox x:Name="DistanceInput" Visibility="Collapsed" />
 
             <TextBlock Text="Duration" Foreground="Crimson"/>
             <TextBox x:Name="DurationInput"  Margin="0,10,0,10"/>

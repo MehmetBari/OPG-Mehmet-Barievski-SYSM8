@@ -5,16 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FITTRACK_PROJEKTUPPGIFT_OPG"
         mc:Ignorable="d"
-         Title="Workouts" Height="400" Width="600" WindowStartupLocation="CenterScreen">
+        Title="Workouts" Height="400" Width="600" WindowStartupLocation="CenterScreen"
+        Background="LightGray">
     <Grid>
-        <StackPanel Background="LightGray">
-            <Label Content="Welcome, [username]" Foreground="Crimson" FontSize="18" x:Name="UsernameLabel"/>
-            <Button Content="Add Workout" Foreground="Crimson" Width="100" Margin="0,10" Click="AddWorkoutButton_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Content="Welcome, [username]" Foreground="Crimson" FontSize="18" x:Name="UsernameLabel" HorizontalAlignment="Center"/>
+
+        <DataGrid Grid.Row="1" x:Name="WorkoutsDataGrid" AutoGenerateColumns="True" 
+          SelectionChanged="WorkoutsDataGrid_SelectionChanged" HeadersVisibility="Column" Margin="10,0,10,48" Grid.RowSpan="2"/>
+
+        <WrapPanel  Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" >
+
+            <Button Content="Add Workout" Foreground="Crimson" Width="100" Click="AddWorkoutButton_Click" Height="36"/>
             <Button Content="Details" Foreground="Crimson" Width="100" Click="DetailsButton_Click"/>
             <Button Content="Remove" Foreground="Crimson" Width="100" Click="RemoveButton_Click"/>
-            <ListBox x:Name="WorkoutsListBox" />
+
             <Button Content="User" Foreground="Crimson" Width="100" Click="UserButton_Click"/>
             <Button Content="Sign Out" Foreground="Crimson" Width="100" Click="SignOutButton_Click"/>
-        </StackPanel>
+            <Button Content="Info" Foreground="Crimson" Margin="5" Click="Info_Button"/>
+        </WrapPanel>
     </Grid>
 </Window>

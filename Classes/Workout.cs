@@ -10,7 +10,6 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
     public abstract class Workout
     {
         //Egenskaper
-
         public DateTime Date { get; set; }
 
         public string Type { get; set; }
@@ -33,6 +32,8 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
         }
         //Metod 
 
+
+        
         public abstract int CalculateCaloriesBurned();
     }
 }

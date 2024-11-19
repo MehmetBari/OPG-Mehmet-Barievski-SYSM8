@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FITTRACK_PROJEKTUPPGIFT_OPG.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,47 +20,72 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG
     /// </summary>
     public partial class UserDetailsWindow : Window
     {
+        
         public UserDetailsWindow()
         {
             InitializeComponent();
-            CurrentUsername.Text = "Nuvarande användarnamn"; // Fyll med faktiska data
+            CurrentUsername.Text = User.currentUser.Username; // Fyll med faktiska data
             CountryComboBox.SelectedIndex = 0; // Exempel
         }
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            if (NewUsername.Text.Length < 3)
+            User user = User.currentUser;
+            string New_Username = NewUsername.Text;
+            string New_Password = NewPassword.Password;
+            string Confirm_Password = ConfirmPassword.Password;
+
+            bool userExist = User.CheckUserExist(New_Username);
+            if(userExist == true)
+            {
+                MessageBox.Show("Användarnamn redan upptaget", "Varning", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+
+
+            if (New_Username.Length < 3)
             {
                 MessageBox.Show("Användarnamn måste vara minst 3 tecken långt.", "Varning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+            else
+            {
+                user.Username = New_Username;
+            }
 
-            if (NewPassword.Password.Length < 5)
+            if (New_Password.Length < 5)
             {
                 MessageBox.Show("Lösenord måste vara minst 5 tecken långt.", "Varning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+            
 
-            if (NewPassword.Password != ConfirmPassword.Password)
+            if (New_Password != Confirm_Password)
             {
                 MessageBox.Show("Lösenorden stämmer inte överens.", "Varning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
-
-            // Kontrollera om användarnamn är upptaget (exempel)
-            bool usernameTaken = false; // Placeholder - implementera en faktisk kontroll
-            if (usernameTaken)
+            else
             {
-                MessageBox.Show("Användarnamn är upptaget.", "Varning", MessageBoxButton.OK, MessageBoxImage.Warning);
-                return;
+                user.Password = New_Password;
             }
+
+            // Kontrollera om användarnamn är upptaget 
+            
+            
 
             // Spara uppgifter
             MessageBox.Show("Användaruppgifter sparade.");
+            WorkoutsWindow workoutsWindow = new WorkoutsWindow(Classes.User.currentUser);
+            workoutsWindow.Show();
             Close();
+            
         }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
+            WorkoutsWindow workoutsWindow = new WorkoutsWindow(Classes.User.currentUser);
+            workoutsWindow.Show();
             Close();
         }
     }
