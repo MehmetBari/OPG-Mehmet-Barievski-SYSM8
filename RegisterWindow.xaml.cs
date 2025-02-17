@@ -22,36 +22,40 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG
         {
             InitializeComponent();
 
-            //Kan lägga till fler länder om man vill
+
+            // Fyller CountryComboBox med en lista av länder.
+            // Man kan enkelt lägga till fler länder om det behövs.
             CountryComboBox.ItemsSource = new List<string> { "Sweden", "Norway", "Denmark", "Finland" };
 
         }
         private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
-            //Hämtar inmatningar
+            // Hämtar inmatade värden från fälten
             string username = UsernameTextBox.Text;
             string password = PasswordTextBox.Password;
             string country = CountryComboBox.SelectedItem as string;
-            //Validerar inmatningarna vi skrivit in 
+
+            // Validerar om alla fält är ifyllda
             if (string.IsNullOrEmpty(country) && string.IsNullOrEmpty(password) && string.IsNullOrEmpty(username))
             {
+                // Går igenom befintliga användare för att se om användaren finns
                 foreach (var user in User.userlist)
                 {
                     if (user.Username != username)
                     {
                         MessageBox.Show("User does not exist");
-                        return;
+                        return; // Avbryter registreringen om användaren inte finns
                     }
                 }   
             }
 
-            // Kolla om användarnamnet är upptaget 
-            User.RegisterUser(country, username, password); 
+            // Registrerar den nya användaren om valideringen godkänns
+            User.RegisterUser(country, username, password);
 
-            
-           
-                // Spara användaren och gå tillbaka till MainWindow
-                MainWindow mainWindow = new MainWindow();
+
+
+            // Öppnar huvudfönstret (MainWindow) och stänger registreringsfönstret
+            MainWindow mainWindow = new MainWindow();
                 mainWindow.Show();
                 this.Close();
             

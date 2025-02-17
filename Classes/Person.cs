@@ -8,12 +8,13 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
 {
     public abstract class Person
     {
-        //Egenskaper
+        // Egenskap för användarnamn
         public string Username { get; set; }
 
-        public string Password { get; set; } 
+        // Egenskap för lösenord
+        public string Password { get; set; }
 
-        //Konstruktor 
+        // Konstruktor som sätter användarnamn och lösenord
 
         public Person(string username, string password)
         {
@@ -21,7 +22,7 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG.Classes
             this.Password = password;
         }
 
-        //Metod
+        // Abstrakt metod för inloggning
         public abstract bool SignIn(string username,string password);
 
     }
