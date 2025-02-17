@@ -27,7 +27,7 @@ namespace FITTRACK_PROJEKTUPPGIFT_OPG
                 User user2 = new User("Sweden", "Mehemet", "1");
                 User.userlist.Add(user2);
 
-                User Admin = new AdminUser("sweden", "Admin", "1");
+                User Admin = new AdminUser("Sweden", "Admin", "1");
                 User.userlist.Add(Admin);
 
                 // Creating initial pre-login workouts
